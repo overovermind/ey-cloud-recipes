@@ -7,7 +7,7 @@ if node[:instance_role] == "app_master" || node[:instance_role] == "app" || (nod
   node[:applications].each do |app_name,data|
 
     # determine the number of workers to run based on instance size
-    if node[:instance_role] == "app_master" || || (node[:instance_role] == "app"
+    if node[:instance_role] == "app_master" || node[:instance_role] == "app"
       worker_count = 1
     else
       case node[:ec2][:instance_type]
