@@ -37,7 +37,7 @@ include_recipe "delayed_job"
 #include_recipe "ssmtp"
 
 #uncomment to run the sunspot recipe
-include_recipe "sunspot"
+#include_recipe "sunspot"
 
 #uncomment to run the exim recipe
 #exim_auth "auth" do
@@ -73,7 +73,11 @@ include_recipe "sunspot"
 #include_recipe "logrotate"
 #
 #uncomment to use the solr recipe
-#include_recipe "solr"
+include_recipe "solr"
+
+#uncomment to add specified cron jobs for application user (deploy)
+# You must add your cron jobs to cron/attributes/cron.rb
+include_recipe "cron"
 
 #include_recipe "varnish_frontend"
 
